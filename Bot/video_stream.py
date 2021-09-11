@@ -16,6 +16,11 @@ app = Client(SESSION_NAME, API_ID, API_HASH)
 group_call_factory = GroupCallFactory(app, GroupCallFactory.MTPROTO_CLIENT_TYPE.PYROGRAM)
 VIDEO_CALL = {}
 
+@Client.on_message(filters.private & filters.user(ADMIN) & filters.command(["start"]))
+async def play(client, m: Message):
+	await m.reply("Hello Start Stream Video Using Command /play(reply_to_message) and /stop\n Check Example https://t.me/lntechnicalgroup/11740 ")
+
+
 @Client.on_message(filters.private & filters.user(ADMIN) & filters.command(["play"]))
 async def play(client, m: Message):
 	if (m.reply_to_message):

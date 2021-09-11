@@ -8,6 +8,10 @@
     "repository": "https://github.com/lntechnical2/videostream",
     "success_url": "https://telegram.dog/lntechnical",
     "env": {
+        "SESSION_NAME": {
+            "description": "",
+            "value": ""
+        },
         "API_ID": {
             "description": "Your APP ID From my.telegram.org ",
             "value": ""

@@ -9,11 +9,11 @@
     "success_url": "https://telegram.dog/lntechnical",
     "env": {
         "CHAT": {
-            "description": "",
+            "description": "Channel or Group user Name With @",
             "value": ""
          },
         "SESSION_NAME": {
-            "description": "",
+            "description": "Pyrogram String Session",
             "value": ""
         },
         "API_ID": {

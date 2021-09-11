@@ -8,6 +8,10 @@
     "repository": "https://github.com/lntechnical2/videostream",
     "success_url": "https://telegram.dog/lntechnical",
     "env": {
+        "CHAT": {
+            "description": "",
+            "value": ""
+         },
         "SESSION_NAME": {
             "description": "",
             "value": ""

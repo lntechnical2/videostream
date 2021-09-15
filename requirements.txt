@@ -1,4 +1,4 @@
 git+https://github.com/pyrogram/pyrogram@master
 pytgcalls==3.0.0.dev16
 TgCrypto
-PyYouTube
+git+https://github.com/lntechnical2/PyYouTube

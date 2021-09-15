@@ -5,7 +5,6 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 # from py_youtube import ytdl
 from py_youtube import ytdl 
-from py_youtube import Data 
 
 API_ID = os.environ.get("API_ID",12345)
 API_HASH = os.environ.get("API_HASH","")

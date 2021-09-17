@@ -16,7 +16,7 @@ VIDEO_CALL = {}
 @Client.on_message(filters.group & filters.command(["play"]))
 async def play(client, m: Message):
 	if (m.reply_to_message):
-			get =await client.get_chat_member(message.chat.id,message.from_user.id)
+			get =await client.get_chat_member(m.chat.id,m.from_user.id)
 			status = get. status
 			cmd_user = ["administrator","creator"]
 			if status in cmd_user:
@@ -31,9 +31,9 @@ async def play(client, m: Message):
 				             	return
 				             try:
 				             	group_call = group_call_factory.get_group_call()
-				             	await group_call.join(message.chat.id)
+				             	await group_call.join(m.chat.id)
 				             	await group_call.start_video(video_url,enable_experimental_lip_sync=True)
-				             	VIDEO_CALL[message.chat.id] = group_call
+				             	VIDEO_CALL[m.chat.id] = group_call
 				             	await m.reply("**Started  Streaming!**")
 				             except Exception as e:
 				             	await m.reply(f"**Error** -- `{e}`")
@@ -42,9 +42,9 @@ async def play(client, m: Message):
 			else:
 			         	try:
 			         		group_call = group_call_factory.get_group_call()
-			         		await group_call.join(CHAT)
+			         		await group_call.join(m.chat.id)
 			         		await group_call.start_video(link,enable_experimental_lip_sync=True)
-			         		VIDEO_CALL[CHAT] = group_call
+			         		VIDEO_CALL[m.chat.id] = group_call
 			         		await m.reply("** Started Streaming!**")
 			         	except Exception as e:
 			         	    	await m.reply(f"**Error** -- `{e}`")
@@ -52,12 +52,12 @@ async def play(client, m: Message):
 
 @Client.on_message(filters.group & filters.command(["stop"]))
 async def stop (client, m: Message):
-	get =await client.get_chat_member(message.chat.id,message.from_user.id)
+	get =await client.get_chat_member(m.chat.id,m.from_user.id)
 	status = get. status
 	cmd_user = ["administrator","creator"]
 	if status in cmd_user:
 	       try:
-	       	await VIDEO_CALL[message.chat.id].stop()
+	       	await VIDEO_CALL[m.chat.id].stop()
 	       	await m.reply("** Stopped Streaming!**")
 	       except Exception as e:
 	       	await m.reply(f"**Error** - `{e}`")

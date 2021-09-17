@@ -6,7 +6,7 @@ from pyrogram.types import Message
 # from py_youtube import ytdl
 from py_youtube import ytdl 
 
-from video_stream import app
+from Bot.video_stream import app
 
 group_call_factory = GroupCallFactory(app, GroupCallFactory.MTPROTO_CLIENT_TYPE.PYROGRAM)
 VIDEO_CALL = {}

@@ -14,7 +14,7 @@ VIDEO_CALL = {}
 
 
 
-@Client.on_message(filters.group & filters.command(["play"]))
+@Client.on_message(filters.group & filters.command(["stream"]))
 async def play(client, m: Message):
 	if (m.reply_to_message):
 			time.sleep(3)
@@ -55,7 +55,7 @@ async def play(client, m: Message):
 			
 				             	
 
-@Client.on_message(filters.group & filters.command(["stop"]))
+@Client.on_message(filters.group & filters.command(["stopstream"]))
 async def stop (client, m: Message):
 	time.sleep(3)
 	get =await client.get_chat_member(m.chat.id,m.from_user.id)

@@ -69,7 +69,7 @@ async def livestream(client, m: Message):
 				             try:
 				             	group_call = group_call_factory.get_group_call()
 				             	await group_call.join(CHAT)
-				             	await group_call.start_video(video_url,enable_experimental_lip_sync=True)
+				             	await group_call.start_video(video_url,enable_experimental_lip_sync=False)
 				             	VIDEO_CALL[CHAT] = group_call
 				             	await m.reply("**Started  Streaming!**")
 				             except Exception as e:
@@ -80,7 +80,7 @@ async def livestream(client, m: Message):
 			         	try:
 			         		group_call = group_call_factory.get_group_call()
 			         		await group_call.join(CHAT)
-			         		await group_call.start_video(link,enable_experimental_lip_sync=True)
+			         		await group_call.start_video(link,enable_experimental_lip_sync=False)
 			         		VIDEO_CALL[CHAT] = group_call
 			         		await m.reply("** Started Streaming!**")
 			         	except Exception as e:

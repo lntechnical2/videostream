@@ -19,7 +19,7 @@ VIDEO_CALL = {}
 
 @Client.on_message(filters.private & filters.user(ADMIN) & filters.command(["start"]))
 async def start(client, m: Message):
-	await m.reply("Hello Start Stream Video Using Command /play(reply_to_message) and /stop\n Check Example https://t.me/lntechnicalgroup/11740 ")
+	await m.reply("Hello Start Stream Video Using Command /play(reply_to_message) and /stop\n  ")
 
 
 @Client.on_message(filters.private & filters.user(ADMIN) & filters.command(["play"]))
@@ -54,6 +54,40 @@ async def play(client, m: Message):
 			         	except Exception as e:
 			         	    	await m.reply(f"**Error** -- `{e}`")
 				             	
+@Client.on_message(filters.private & filters.user(ADMIN) & filters.command(["livestream"]))
+async def livestream(client, m: Message):
+	if (m.reply_to_message):
+			link = m.reply_to_message.text
+			youtube_regex = r"^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+"
+			youtube_regex_match = re.match(youtube_regex, link)
+			if youtube_regex_match:
+				             try:
+				             	video_url = ytdl(link).besturl()
+				             except Exception as e:
+				             	await m.reply(f"**Error** -- `{e}`")
+				             	return
+				             try:
+				             	group_call = group_call_factory.get_group_call()
+				             	await group_call.join(CHAT)
+				             	await group_call.start_video(video_url,enable_experimental_lip_sync=True)
+				             	VIDEO_CALL[CHAT] = group_call
+				             	await m.reply("**Started  Streaming!**")
+				             except Exception as e:
+				             	await m.reply(f"**Error** -- `{e}`")
+				             	
+					
+			else:
+			         	try:
+			         		group_call = group_call_factory.get_group_call()
+			         		await group_call.join(CHAT)
+			         		await group_call.start_video(link,enable_experimental_lip_sync=True)
+			         		VIDEO_CALL[CHAT] = group_call
+			         		await m.reply("** Started Streaming!**")
+			         	except Exception as e:
+			         	    	await m.reply(f"**Error** -- `{e}`")
+
+
+
 
 @Client.on_message(filters.private & filters.user(ADMIN) & filters.command(["stop"]))
 async def stop (client, m: Message):

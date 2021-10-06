@@ -20,8 +20,9 @@ ADMIN - Your User ID Get From [@MissRose_bot](https://t.me/MissRose_bot)
 =>> Video Player 🎧
 - /stream : Reply to Video or File That You Want To stream In Vc And You Can Try Lives
 - /livestream  : To Steram YT Live
-- /start :Start the bot
-- /stop To Stop The Current stream in vc
+- /start : Start the bot
+- /stop : To Stop The Current stream in vc
+- /stopstream : To Stop Streaming on Groups
 
 # 🚀 Deployment
 

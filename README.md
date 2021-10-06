@@ -1,5 +1,5 @@
-# Vidio Steram
-A Advanced VC Video Player created for playing vidio in the voice chats of Telegram Groups And Channel
+# Video Stream
+An Advanced VC Video Player created for playing video in the voice chats of Telegram Groups And Channel
 
 # Configs
 TOKEN - Get bot token from @BotFather
@@ -8,7 +8,7 @@ API_ID - From my.telegram.org
 
 API_HASH - From my.telegram.org
 
-CHAT - Channel or Group user Name With @
+CHAT - Channel or Group username With @
 
 SESSION_NAME - Pyrogram String Session Get From [Here](https://replit.com/@SpEcHiDe/GenerateStringSession?v=1) 
 
@@ -17,21 +17,22 @@ TOKEN - Your Bot Token From [@BotFather](https://t.me/BotFather)
 ADMIN - Your User ID Get From [@MissRose_bot](https://t.me/MissRose_bot) 
 
 # Commands
-=>> Vidio Playing 🎧
+=>> Video Player 🎧
 - /stream : Reply to Video or File That You Want To stream In Vc And You Can Try Lives
-- /ivestream  : To Steram YT Live
-- /start :Start the bot
-- /stop To Stop The Current steram in vc
+- /livestream  : To Steram YT Live
+- /start : Start the bot
+- /stop : To Stop The Current stream in vc
+- /stopstream : To Stop Streaming on Groups
 
 # 🚀 Deployment
 
 Deploy Your Own Bot ♥️ **Star 🌟 Fork 🍴 & Deploy**
 
-### 💜 Railway
+### 💜 Railway - use at own risk
 
 [![Deploy+on+Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/lntechnical2/videostream&envs=CHAT,SESSION_NAME,API_ID,API_HASH,TOKEN,ADMIN)
 
-### 💜 Heroku
+### 💜 Heroku - simplest way
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?templatehttps://github.com/lntechnical2/videostream)
 
@@ -47,7 +48,7 @@ pip3 install -U -r requirements.txt
 python3 -m Bot
 
 ```
- Devs
+ Dev
 - **Lokaman**
 
 ## Credits

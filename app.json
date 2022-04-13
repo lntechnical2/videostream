@@ -5,7 +5,7 @@
         "Video Stream ",
         "pytgcalss"
     ],
-    "repository": "https://github.com/lntechnical2/videostream",
+    "repository": "https://github.com/tanvirrahman38/videostream",
     "success_url": "https://telegram.dog/lntechnical",
     "env": {
         "CHAT": {
